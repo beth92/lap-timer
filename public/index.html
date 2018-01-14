@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Lap Timer</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+  </head>
+  <body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+      <p>{{mins | number: 0}} min {{secs | number: 2}} sec</p>
+      <button ng-click='startTimer()'>start</button>
+      <button ng-click='stopTimer()' ng-show='running'>stop</button>
+      <div>Stop timer after:
+        <input ng-model='limit'  ng-disabled='running'/>
+        <select ng-model='units'  ng-disabled='running'>
+          <option value='min'>minutes</option>
+          <option value='sec'>seconds</option
+        </select>
+      </div>
+    </div>
+  </body>
+</html>
