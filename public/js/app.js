@@ -1,20 +1,19 @@
-/* jshint esversion: 6 */
 
-var angular = require('angular'); 
+const angular = require('angular');
 
-var app = angular.module('myApp', []);
+const app = angular.module('myApp', []);
 app.controller('myCtrl', function($scope, $interval) {
   $scope.mins = 0;
   $scope.secs = 0;
   $scope.running = false;
-  var timer;
+  let timer;
   $scope.limit = 5.0;
   $scope.units = 'min';
 
   $scope.startTimer = function () {
     $scope.running = true;
-    var limitSecs = $scope.units === 'sec' ? $scope.limit : $scope.limit * 60;
-    var startTime = (new Date()).getTime();
+    let limitSecs = $scope.units === 'sec' ? $scope.limit : $scope.limit * 60;
+    let startTime = (new Date()).getTime();
     timer = $interval(function(){
       let newTime = (new Date().getTime() - startTime)/1000.0;
       $scope.mins = (newTime / 60);
