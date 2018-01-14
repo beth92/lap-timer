@@ -1,6 +1,6 @@
 /* jshint esversion: 6 */
 
-// import angular from angular; 
+var angular = require('angular'); 
 
 var app = angular.module('myApp', []);
 app.controller('myCtrl', function($scope, $interval) {
