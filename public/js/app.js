@@ -8,8 +8,8 @@ const app = angular.module('myApp', ['ngMaterial'])
 .config(function($mdThemingProvider) {
   $mdThemingProvider.theme('default')
     .primaryPalette('teal')
-    .accentPalette('blue')
-    .warnPalette('red')
+    .accentPalette('teal')
+    .warnPalette('teal')
     .backgroundPalette('teal');
 });
 
