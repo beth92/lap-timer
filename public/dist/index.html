@@ -5,19 +5,28 @@
     <title>Lap Timer</title>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script> -->
     <script type="text/javascript" src="bundle.js"></script>
+    <!-- <link rel="stylesheet" href="../../node_modules/angular-material/angular-material.css"> -->
   </head>
   <body>
     <div ng-app="myApp" ng-controller="myCtrl">
       <p>{{mins | number: 0}} min {{secs | number: 2}} sec</p>
-      <button ng-click='startTimer()'>start</button>
-      <button ng-click='stopTimer()' ng-show='running'>stop</button>
-      <div>Stop timer after:
-        <input ng-model='limit'  ng-disabled='running'/>
+      <p>{{laps | number: 0}} laps</p>
+      <p ng-show='enableLimit'>{{projected | number: 2}} laps projected in {{limit}} {{units}}</p>
+      <md-button ng-click='startTimer()'>Start</md-button>
+      <md-button ng-click='resetNumbers()' ng-show='!running'>Reset</md-button>
+      <md-button ng-click='stopTimer()' ng-show='running'>Stop</md-button>
+      <div ng-show='running'>
+        <md-button ng-click='addLap()'>Lap</md-button>
+      </div>
+      <div ng-show='!running'><md-checkbox ng-model='enableLimit'>Enable Time Limit</md-checkbox>
+      <div ng-show="enableLimit">Stop timers after:
+        <md-input-container ng-model='limit'  ng-disabled='running'></md-input-container>
         <select ng-model='units'  ng-disabled='running'>
           <option value='min'>minutes</option>
           <option value='sec'>seconds</option
         </select>
       </div>
     </div>
+  </div>
   </body>
 </html>
