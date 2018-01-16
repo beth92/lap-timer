@@ -6,11 +6,12 @@ const ngMaterial = require('angular-material');
 
 const app = angular.module('myApp', ['ngMaterial'])
 .config(function($mdThemingProvider) {
+  const themeColor = 'blue';
   $mdThemingProvider.theme('default')
-    .primaryPalette('teal')
-    .accentPalette('teal')
-    .warnPalette('teal')
-    .backgroundPalette('teal');
+    .primaryPalette(themeColor)
+    .accentPalette(themeColor)
+    .warnPalette(themeColor)
+    .backgroundPalette(themeColor);
 });
 
 app.controller('myCtrl', function($scope, $interval) {

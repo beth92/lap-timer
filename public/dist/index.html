@@ -9,10 +9,10 @@
     <!-- <link rel="stylesheet" href="../../node_modules/angular-material/angular-material.css"> -->
   </head>
   <body>
-    <div ng-app="myApp" ng-controller="myCtrl" layout="column" flex="33">
-      <md-content layout-padding><p>{{mins | number: 0}} min {{secs | number: 2}} sec</p>
-      <p>{{laps | number: 0}} laps</p>
-      <p ng-show='enableLimit'>{{projected | number: 2}} laps projected in {{limit}} {{units}}</p></md-content>
+    <md-card ng-app="myApp" ng-controller="myCtrl" layout="column" flex="33" style="margin:auto; max-width: 500px">
+      <md-content layout-padding><h1>{{mins | number: 0}} min {{secs | number: 2}} sec</h1>
+      <h1>{{laps | number: 0}} laps</h1>
+      <h1 ng-show='enableLimit'>{{projected | number: 2}} laps projected in {{limit}} {{units}}</h1></md-content>
       <div layout="row" layout-xs="column"><md-button class="md-primary md-raised" ng-click='startTimer()'>Start</md-button>
       <md-button ng-click='resetNumbers()' ng-show='!running'>Reset</md-button>
       <md-button class="md-warn md-raised" ng-click='stopTimer()' ng-show='running'>Stop</md-button>
@@ -31,6 +31,6 @@
           </md-input-container>
       </div>
     </md-content>
-  </div>
+  </md-card>
   </body>
 </html>
