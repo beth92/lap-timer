@@ -7,11 +7,7 @@ const ngMaterial = require('angular-material');
 const app = angular.module('myApp', ['ngMaterial'])
 .config(function($mdThemingProvider) {
   const themeColor = 'blue';
-  $mdThemingProvider.theme('default')
-    .primaryPalette(themeColor)
-    .accentPalette(themeColor)
-    .warnPalette(themeColor)
-    .backgroundPalette(themeColor);
+  $mdThemingProvider.theme('default');
 });
 
 app.controller('myCtrl', function($scope, $interval) {

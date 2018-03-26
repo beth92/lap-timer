@@ -13,10 +13,12 @@
       <md-content layout-padding><h1>{{mins | number: 0}} min {{secs | number: 2}} sec</h1>
       <h1>{{laps | number: 0}} laps</h1>
       <h1 ng-show='enableLimit'>{{projected | number: 2}} laps projected in {{limit}} {{units}}</h1></md-content>
-      <div layout="row" layout-xs="column"><md-button class="md-primary md-raised" ng-click='startTimer()'>Start</md-button>
-      <md-button ng-click='resetNumbers()' ng-show='!running'>Reset</md-button>
-      <md-button class="md-warn md-raised" ng-click='stopTimer()' ng-show='running'>Stop</md-button>
-      <md-button ng-click='addLap()' ng-show='running'>Lap</md-button></div>
+      <div layout="row" layout-xs="column">
+        <md-button class="md-primary md-raised" ng-click='startTimer()' ng-show='!running'>Start</md-button>
+        <md-button ng-click='resetNumbers()' ng-show='!running'>Reset</md-button>
+        <md-button class="md-warn md-raised" ng-click='stopTimer()' ng-show='running'>Stop</md-button>
+        <md-button ng-click='addLap()' ng-show='running'>Lap</md-button>
+      </div>
       <md-content layout-padding ng-show='!running'><md-checkbox ng-model='enableLimit'>Enable Time Limit</md-checkbox>
       <div ng-show="enableLimit" layout="column">
         <md-input-container>
