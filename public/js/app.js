@@ -1,4 +1,3 @@
-/* jshint esversion: 6 */
 import '../../node_modules/angular-material/angular-material.css';
 
 const angular = require('angular');

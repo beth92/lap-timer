@@ -20,7 +20,6 @@ module.exports = {
         }
     ]
   },
-  watch: true,
   watchOptions: {
     aggregateTimeout: 1000,
     poll: 1000
